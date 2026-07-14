@@ -1,0 +1,1 @@
+Deploy to GitHub then Cloudflare Pages. Build command blank. Output directory: /
