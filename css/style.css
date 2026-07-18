@@ -102,7 +102,45 @@ header{
   background:var(--primary);
   color:#fff;
 }
+.hero{
+    padding:70px 0;
+    text-align:center;
+}
 
+.hero-content{
+    width:min(92%,1100px);
+    margin:auto;
+}
+
+.hero h1{
+    margin-bottom:30px;
+}
+
+.hero-banner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto;
+}
+
+.hero-banner img{
+    width: 65%;
+    max-width: 650px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.why-tagline{
+    margin-top:20px;
+    font-size:2rem;
+    line-height:1.4;
+}
+
+.hero p{
+    margin:20px auto 35px;
+    max-width:700px;
+}
 section{
   padding:15px 0;
 }
@@ -150,10 +188,16 @@ section>p{
   gap:1rem;
 }
 .shot{
-  min-height:320px;
+  min-height:220px;
   display:grid;
   place-items:center;
   color:var(--muted);
+}
+.shot img {
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+    border-radius: 20px;
 }
 
 footer{
