@@ -91,6 +91,13 @@ img { max-width: 100%; display: block; }
 .hero h1 .g { color: var(--green); }
 .hero .lead { font-size: 18.5px; color: var(--text); max-width: 560px; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.hero-duo { display: grid; grid-template-columns: auto auto; gap: 18px 28px; margin-top: 28px; justify-content: start; }
+.duo .btn { min-width: 190px; }
+.duo-points { list-style: none; margin-top: 14px; display: grid; gap: 8px; }
+.duo-points li { display: flex; align-items: center; gap: 8px; font-size: 14.5px; color: var(--ink); }
+.duo-points b { font-weight: 700; }
+@media (min-width: 761px) { .duo-points li { white-space: nowrap; } }
+.tick.b { background: var(--blue-soft); color: var(--blue); }
 .hero-points { display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 28px; list-style: none; }
 .hero-points li { display: flex; align-items: center; gap: 8px; font-size: 14.5px; color: var(--ink); font-weight: 500; }
 .tick { width: 20px; height: 20px; border-radius: 50%; background: var(--green-soft); color: var(--green); display: inline-grid; place-items: center; font-size: 12px; font-weight: 800; flex: none; }
@@ -331,6 +338,7 @@ section { padding: 90px 0; }
   .nav-cta .btn { display: none; }
   .hero { padding: 44px 0 80px; }
   .hero .lead { font-size: 17px; }
+  .hero-duo { grid-template-columns: 1fr; gap: 22px; }
   .phones-wrap { --s: .62; }
   .facts-grid { grid-template-columns: 1fr 1fr; }
   .fact:nth-child(2) { border-right: 0; }
