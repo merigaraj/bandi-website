@@ -1,245 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-      <title>Contact | rydap</title>
-
-      <meta name="description"
-            content="Contact rydap for customer support, business enquiries and partnership opportunities.">
-
-      <link rel="stylesheet" href="css/style.css">
-      <link rel="stylesheet" href="css/responsive.css">
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact us | rydap</title>
+<meta name="description" content="Contact rydap for ride support, driver partner help, account questions and business enquiries.">
+<meta name="theme-color" content="#0054fd">
+<link rel="canonical" href="https://rydap.in/contact">
+<link rel="icon" type="image/png" sizes="32x32" href="images/icon-32.png">
+<link rel="apple-touch-icon" href="images/icon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="rydap">
+<meta property="og:title" content="Contact us | rydap">
+<meta property="og:description" content="Contact rydap for ride support, driver partner help, account questions and business enquiries.">
+<meta property="og:url" content="https://rydap.in/contact">
+<meta property="og:image" content="https://rydap.in/images/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
 </head>
-
 <body>
-
-      <header>
-
-            <nav class="navbar">
-
-                  <a href="index.html" class="logo">
-                        <img src="images/bandi-logo.png" alt="rydap Logo" height="46">
-                  </a>
-
-                  <ul class="nav-links">
-
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="contact.html" class="active">Contact</a></li>
-                        <li><a href="privacy.html">Privacy Policy</a></li>
-                        <li><a href="terms.html">Terms & Conditions</a></li>
-
-                  </ul>
-
-            </nav>
-
-      </header>
-
-
-      <!-- <section class="container" style="padding-top:120px;padding-bottom:80px;max-width:900px;"> -->
-      <section class="container legal-page">
-
-            <h1 style="margin-bottom:20px;">Contact rydap</h1>
-
-            <p style="margin-bottom:40px;">
-                  We're happy to help. Whether you have a question, need support, or want to discuss a partnership, we'd
-                  love to hear from you.
-            </p>
-
-            <div style="display:grid;gap:30px;">
-
-<div class="support-form">
-
-  <h2>Send us a message</h2>
-
-  <div class="form-group">
-    <label for="supportName">Name</label>
-    <input
-      type="text"
-      id="supportName"
-      placeholder="Enter your name"
-    >
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="index.html" aria-label="rydap home"><img src="images/rydap-logo.png" alt="rydap" width="102" height="34"></a>
+    <nav aria-label="Main">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#ride">Ride</a></li>
+        <li><a href="index.html#drive">Drive</a></li>
+        <li><a href="index.html#safety">Safety</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-primary btn-sm" href="index.html#download">Get the app</a>
+      <button class="menu-btn" aria-label="Open menu" aria-controls="navLinks" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
   </div>
+</header>
 
-  <div class="form-group">
-    <label for="supportPhone">Registered Phone Number</label>
-    <input
-      type="tel"
-      id="supportPhone"
-      placeholder="Enter your 10-digit registered mobile number"
-      inputmode="numeric"
-      maxlength="10"
-    >
+<main>
+  <div class="doc-hero">
+    <div class="container">
+      <div class="crumbs"><a href="index.html">Home</a> / Contact</div>
+      <h1>We're here to help</h1>
+      <p>Questions about a ride, your account or driving with rydap? Send us a message — we usually reply within 1–2 business days.</p>
+    </div>
   </div>
-
-  <div class="form-group">
-    <label for="supportEmail">Email</label>
-    <input
-      type="email"
-      id="supportEmail"
-      placeholder="Enter your email address"
-    >
+  <div class="container contact-grid">
+    <form class="form-card" onsubmit="return sendSupportEmail(event)">
+      <h2>Send us a message</h2>
+      <div class="field"><label for="supportName">Your name</label><input id="supportName" type="text" placeholder="Enter your name" autocomplete="name" required></div>
+      <div class="field"><label for="supportPhone">Registered mobile number</label><input id="supportPhone" type="tel" inputmode="numeric" maxlength="10" placeholder="10-digit mobile number" autocomplete="tel-national"></div>
+      <div class="field"><label for="supportEmail">Email (optional)</label><input id="supportEmail" type="email" placeholder="you@example.com" autocomplete="email"></div>
+      <div class="field"><label for="supportTopic">Topic</label>
+        <select id="supportTopic">
+          <option>Ride help</option>
+          <option>Payment or fare question</option>
+          <option>Driver partner support</option>
+          <option>Account or login</option>
+          <option>Safety concern</option>
+          <option>Business or partnership</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="field"><label for="supportMessage">Message</label><textarea id="supportMessage" placeholder="Tell us how we can help. For a ride, please add the date and time." required></textarea></div>
+      <button class="btn btn-primary" type="submit">Send message</button>
+      <p class="form-note">This opens your email app with your message ready to send to support@rydap.in.</p>
+    </form>
+    <aside class="info-card">
+      <h2>Other ways to reach us</h2>
+      <div class="info-item"><div class="icon b">✉️</div><div><b style="color:var(--ink)">Email</b><br><a href="mailto:support@rydap.in">support@rydap.in</a></div></div>
+      <div class="info-item"><div class="icon g">🚖</div><div><b style="color:var(--ink)">Driver partners</b><br>Mention “Partner” and your registered number for faster help.</div></div>
+      <div class="info-item"><div class="icon b">⏱️</div><div><b style="color:var(--ink)">Response time</b><br>Usually within 1–2 business days.</div></div>
+      <div class="info-item"><div class="icon g">🆘</div><div><b style="color:var(--ink)">Emergency?</b><br>Call <b>112</b> first — it reaches police, ambulance and fire services.</div></div>
+    </aside>
   </div>
-
-  <div class="form-group">
-    <label for="supportMessage">Message</label>
-    <textarea
-      id="supportMessage"
-      placeholder="Tell us how we can help"
-    ></textarea>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <img class="footer-logo" src="images/rydap-logo-white.png" alt="rydap" width="90" height="30">
+        <p>Ride easy. City rides by bike, auto and car — fair for passengers and for driver partners.</p>
+        <p style="margin-top:10px">An Indian startup by <b style="color:#fff">rydap IT Solutions</b> 🇮🇳</p>
+      </div>
+      <div>
+        <h4>Ride</h4>
+        <ul>
+          <li><a href="index.html#ride">Why ride with rydap</a></li>
+          <li><a href="index.html#safety">Safety</a></li>
+          <li><a href="index.html#faq">FAQs</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Drive</h4>
+        <ul>
+          <li><a href="index.html#drive">Drive with rydap</a></li>
+          <li><a href="index.html#download">Get rydap Drive</a></li>
+          <li><a href="contact.html">Partner support</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="index.html#about">About us</a></li>
+          <li><a href="terms.html">Terms &amp; Conditions</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="delete-account.html">Delete account</a></li>
+          <li><a href="mailto:support@rydap.in">support@rydap.in</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span data-year>2026</span> rydap IT Solutions. All rights reserved.</span>
+      <span>Made in India 🇮🇳 · Hyderabad</span>
+    </div>
   </div>
-
-  <button
-    type="button"
-    class="support-submit-btn"
-    onclick="sendSupportEmail()"
-  >
-    Send Message
-  </button>
-
-</div>
-
-                  <div>
-
-                        <h2>Contact</h2>
-
-                        <p>Email:</p>
-
-                        <p>
-                              <a href="mailto:support@rydap.in">
-                                    support@rydap.in
-                              </a>
-                        </p>
-
-                  </div>
-
-                  <div>
-
-                        <h2>Website</h2>
-
-                        <p>
-
-                              <a href="https://rydap.in">
-                                    https://rydap.in
-                              </a>
-
-                        </p>
-
-                  </div>
-
-                  <div>
-
-                        <h2>Response Time</h2>
-
-                        <p>
-
-                              Our team aims to respond to all enquiries within 1–2 business days.
-
-                        </p>
-
-                  </div>
-
-            </div>
-
-      </section>
-
-
-      <footer>
-
-            <img src="images/bandi-logo.png" alt="bandi Logo" height="40">
-
-            <p>
-
-                  © 2026 rydap. All Rights Reserved.
-
-            </p>
-
-            <p>
-
-                  <a href="index.html">Home</a> •
-
-                  <a href="privacy.html">Privacy Policy</a> •
-
-                  <a href="terms.html">Terms & Conditions</a>
-
-            </p>
-
-      </footer>
-
-      <footer>
-  ...
 </footer>
-
-<script src="js/app.js"></script>
-
-<script>
-function sendSupportEmail() {
-
-  const name = document
-    .getElementById("supportName")
-    .value.trim();
-
-  const phone = document
-    .getElementById("supportPhone")
-    .value.trim();
-
-  const email = document
-    .getElementById("supportEmail")
-    .value.trim();
-
-  const message = document
-    .getElementById("supportMessage")
-    .value.trim();
-
-  // Name mandatory
-  if (!name) {
-    alert("Please enter your name.");
-    return;
-  }
-
-  // Valid Indian mobile number
-  const phoneRegex = /^[6-9]\d{9}$/;
-
-  if (!phoneRegex.test(phone)) {
-    alert("Please enter a valid 10-digit registered mobile number.");
-    return;
-  }
-
-  // Valid email
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-  if (!emailRegex.test(email)) {
-    alert("Please enter a valid email address.");
-    return;
-  }
-
-  // Message mandatory
-  if (!message) {
-    alert("Please enter your message.");
-    return;
-  }
-
-  const subject =
-    encodeURIComponent("rydap Support Request");
-
-  const body =
-    encodeURIComponent(
-      "Name: " + name +
-      "\nRegistered Phone Number: " + phone +
-      "\nEmail: " + email +
-      "\n\nMessage:\n" + message
-    );
-
-  window.location.href =
-    "mailto:support@rydap.in" +
-    "?subject=" + subject +
-    "&body=" + body;
-}
-</script>
-
+<script src="js/site.js"></script>
 </body>
 </html>
